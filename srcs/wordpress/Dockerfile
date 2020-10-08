@@ -10,6 +10,7 @@ RUN wget https://wordpress.org/latest.tar.gz \
       && tar -xvf latest.tar.gz \
       && mkdir www/
 RUN mv wordpress/ www/
+COPY srcs/livenessprobe.sh .
 
 EXPOSE 5050
 

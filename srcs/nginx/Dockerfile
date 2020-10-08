@@ -9,6 +9,7 @@ COPY srcs/index.html www/
 COPY srcs/style.css www/
 COPY srcs/google.png www/
 COPY srcs/nginx.conf etc/nginx/
+COPY srcs/livenessprobe.sh .
 
 RUN openssl req -x509 -nodes -subj '/C=FR/ST=PARIS/L=PARIS/O=jnguyen/CN=localhost' \
 		 -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/nginx-selfsigned.key \

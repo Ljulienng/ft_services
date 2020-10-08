@@ -69,6 +69,13 @@ spec:
               key: wp_password
         - name: MYSQL_IP
           value: mysql-service.default.svc.cluster.local
+        livenessProbe:
+          exec:
+            command:
+            - /bin/ash
+            - livenessprobe.sh
+          initialDelaySeconds: 5
+          periodSeconds: 3
         ports:
         - containerPort: 5050
 ---

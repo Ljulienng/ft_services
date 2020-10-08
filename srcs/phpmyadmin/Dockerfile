@@ -14,7 +14,7 @@ RUN wget http://files.directadmin.com/services/all/phpMyAdmin/phpMyAdmin-5.0.2-a
  
 RUN mv phpMyAdmin-5.0.2-all-languages/* www/phpmyadmin/
 COPY srcs/config.inc.php www/phpmyadmin
-
+COPY srcs/livenessprobe.sh .
 EXPOSE 5000
 
 COPY srcs/start.sh .

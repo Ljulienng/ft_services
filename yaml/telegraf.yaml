@@ -17,6 +17,13 @@ spec:
       - name: telegraf
         image: telegraf-alpine
         imagePullPolicy: Never
+        livenessProbe:
+          exec:
+            command:
+            - /bin/ash
+            - livenessprobe.sh
+          initialDelaySeconds: 5
+          periodSeconds: 3
         ports:
         - containerPort: 8125
         volumeMounts:
