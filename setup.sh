@@ -51,5 +51,5 @@ eval $(minikube docker-env)
 docker_build;
 kubernetes_build;
 
-printf "\nGrafana: admin mdp: admin \nPhpmyadmin: wp_user mdp: password\nSsh: ssh_user mdp: password\nftp: ftps_user mdp: password\n"
+printf "\nGrafana: admin mdp: admin \nPhpmyadmin: admin mdp: admin\nSsh: admin mdp: admin\nftp: admin mdp: admin\n"
 minikube dashboard &
