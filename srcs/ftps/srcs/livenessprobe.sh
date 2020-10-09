@@ -1,1 +1,1 @@
-curl --ftp-ssl --insecure --user ftps_user:password ftp://localhost:21
+curl --ftp-ssl --insecure --user admin:admin ftp://localhost:21

@@ -31,7 +31,7 @@ spec:
         livenessProbe:
           exec:
             command:
-            - /bin/ash
+            - sh
             - livenessprobe.sh
           initialDelaySeconds: 15
           periodSeconds: 3
