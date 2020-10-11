@@ -3,6 +3,7 @@ metallb_build()
     kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.9.3/manifests/namespace.yaml > /dev/null
     kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.9.3/manifests/metallb.yaml > /dev/null
     kubectl create secret generic -n metallb-system memberlist --from-literal=secretkey="$(openssl rand -base64 128)" > /dev/null
+    kubectl apply -f yaml/metallb.yaml;
     kubectl apply -f yaml/secret.yaml > /dev/null
     printf "\n---------------------------"
     printf "\n Metallb + secret: Done"
@@ -26,16 +27,15 @@ docker_build()
 
 kubernetes_build()
 {
-    kubectl create -f yaml/ftps.yaml;
-    kubectl create -f yaml/grafana.yaml;
-    kubectl create -f yaml/nginx.yaml;
-    sleep 1;
-    kubectl create -f yaml/mysql.yaml;
-    kubectl create -f yaml/wordpress.yaml;
-    kubectl create -f yaml/phpmyadmin.yaml;
-    kubectl create -f yaml/influxdb.yaml;
-    kubectl create -f yaml/telegraf.yaml;
-    kubectl create -f yaml/metallb.yaml;
+    kubectl apply -f yaml/ftps.yaml;
+    kubectl apply -f yaml/grafana.yaml;
+    kubectl apply -f yaml/nginx.yaml;
+    kubectl apply -f yaml/mysql.yaml;
+    kubectl apply -f yaml/wordpress.yaml;
+    kubectl apply -f yaml/phpmyadmin.yaml;
+    kubectl apply -f yaml/influxdb.yaml;
+    kubectl apply -f yaml/telegraf.yaml;
+    kubectl apply -f yaml/metallb.yaml;
     printf "\n---------------------------"
     printf "\n Kubernetes: Done"
     printf "\n*---------------------------\n\n"

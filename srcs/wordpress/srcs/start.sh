@@ -20,6 +20,8 @@ define('SECURE_AUTH_SALT', 'put your unique phrase here');
 define('LOGGED_IN_SALT',   'put your unique phrase here');
 define('NONCE_SALT',       'put your unique phrase here');
 \$table_prefix = 'wp_';
+define( 'CONCATENATE_SCRIPTS', false ); 
+define( 'SCRIPT_DEBUG', true );
 define('WP_DEBUG', false);
 /* C’est tout, ne touchez pas à ce qui suit ! Bonne publication. */
 /** Chemin absolu vers le dossier de WordPress. */
